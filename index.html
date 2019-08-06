@@ -1,0 +1,659 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/houdini.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1 class="screamer">🐰🎩</h1>
+					<p class="sub-screamer">CSS Houdini: The Magic of Properties, Values, & the Paint API ✨ </p>
+				</section>
+				<section data-state="vintage">
+					<img src="houdini.jpg" class="responsive-img" />
+				</section>
+				<section>
+					<h1 class="screamer strong">Want new CSS features?</h1>
+					<p class="sub-screamer light">It's a waiting game...</p>
+				</section>
+				<section>
+				<h1 class="screamer">CSS Standards Process</h1>
+					<ul class="sub-screamer">
+						<li class="fragment" data-fragment-index="0">Working Draft (WD)</li>
+						<li class="fragment" data-fragment-index="1">Candidate Recommendation (CR)</li>
+						<li class="fragment" data-fragment-index="2">Proposed Recommendation</li>
+						<li class="fragment" data-fragment-index="3">W3C Recommendation (REC)</li>
+					</ul>
+				</section>
+				<section>
+					<?xml version="1.0" encoding="UTF-8"?>
+					<svg width="659px" height="231px" viewBox="0 0 659 231" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+					    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+					    <title>Group</title>
+					    <desc>Created with Sketch.</desc>
+					    <defs></defs>
+					    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					        <g id="Group">
+					            <path d="M301.5,72.5 L336.5,72.5" id="Line-3" stroke="#FFFFFF" stroke-linecap="square"></path>
+					            <rect id="Rectangle" fill="#ED7782" x="358" y="76" width="131" height="61"></rect>
+					            <text id="CSSOM" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="391.37" y="112">CSSOM</tspan>
+					            </text>
+					            <rect id="Rectangle" fill="#B8E986" x="358" y="0" width="131" height="61"></rect>
+					            <rect id="Rectangle" fill="#ED7782" x="528" y="40" width="131" height="61"></rect>
+					            <text id="Render" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="561.9" y="78">Render</tspan>
+					            </text>
+					            <path d="M509.5,69.5 L528.5,69.5" id="Line-10" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-10-decoration-1" d="M528.5,69.5 L517.7,66.5 L517.7,72.5 L528.5,69.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <rect id="Rectangle" fill="#ED7782" x="528" y="170" width="131" height="61"></rect>
+					            <text id="Layout" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="564.11" y="204">Layout</tspan>
+					            </text>
+					            <rect id="Rectangle" fill="#ED7782" x="358" y="170" width="131" height="61"></rect>
+					            <text id="Paint" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="399.22" y="204">Paint</tspan>
+					            </text>
+					            <rect id="Rectangle" fill="#ED7782" x="171" y="170" width="131" height="61"></rect>
+					            <rect id="Rectangle" fill="#F0F0F0" x="0" y="170" width="131" height="61"></rect>
+					            <text id="Screen" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="34.46" y="206">Screen</tspan>
+					            </text>
+					            <path d="M590.5,101.5 L590.5,171.5" id="Line-11" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-11-decoration-1" d="M590.5,171.5 L593.5,160.7 L587.5,160.7 L590.5,171.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M129.5,73.5 L169.5,73.5" id="Line" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-decoration-1" d="M169.5,73.5 L158.7,70.5 L158.7,76.5 L169.5,73.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="" id="Line-2" stroke="#979797" stroke-linecap="square"></path>
+					            <path d="M337.5,34.5 L337.5,105.5" id="Line-4" stroke="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M338.5,34.5 L358.5,34.5" id="Line-5" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-5-decoration-1" d="M358.5,34.5 L347.7,31.5 L347.7,37.5 L358.5,34.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M337.5,105.5 L358.5,105.5" id="Line-6" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-6-decoration-1" d="M358.5,105.5 L347.7,102.5 L347.7,108.5 L358.5,105.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <rect id="Rectangle" fill="#ED7782" x="171" y="42" width="131" height="61"></rect>
+					            <rect id="Rectangle" fill="#F0F0F0" x="1" y="42" width="131" height="61"></rect>
+					            <path d="M490.5,31.5 L508.5,31.5" id="Line-7" stroke="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M508.5,32.5 L508.5,107.5" id="Line-8" stroke="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M489.5,108.5 L508.5,108.5" id="Line-9" stroke="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M528.5,199.5 L487.5,199.5" id="Line-12" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-12-decoration-1" d="M487.5,199.5 L498.3,202.5 L498.3,196.5 L487.5,199.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M358.5,199.5 L301.5,199.5" id="Line-12" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-12-decoration-1" d="M301.5,199.5 L312.3,202.5 L312.3,196.5 L301.5,199.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path d="M168.5,199.5 L130.5,199.5" id="Line-12" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <path id="Line-12-decoration-1" d="M130.5,199.5 L141.3,202.5 L141.3,196.5 L130.5,199.5 Z" stroke="#FFFFFF" fill="#FFFFFF" stroke-linecap="square"></path>
+					            <text id="HTML-/-CSS" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="13" y="80">HTML / CSS</tspan>
+					            </text>
+					            <text id="Parser" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="207.43" y="80">Parser</tspan>
+					            </text>
+					            <text id="DOM" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="398.29" y="37">DOM</tspan>
+					            </text>
+					            <text id="Composite" font-family="Lato-Regular, Lato" font-size="20" font-weight="normal" fill="#000000">
+					                <tspan x="189.93" y="206">Composite</tspan>
+					            </text>
+					        </g>
+					    </g>
+					</svg>
+				</section>
+				<section>
+					<h1 class="screamer strong">CSS Houdini</h1>
+					<p class="sub-screamer">Collection of <span class="emphasis">browser APIs</span> that allows you to gain access to the <span class="emphasis">browsers CSS engine</span>.</p>
+					<div class="grid-elements">
+						<div>Paint</div>
+						<div>Typed OM</div>
+						<div>Properties & values</div>
+						<div>Animation</div>
+						<div>Layout</div>
+						<div>Parser</div>
+						<div>Font Metrics</div>
+						<div>✨ ✨ ✨</div>
+					</div>
+				</section>
+				<section>
+					<h1 class="screamer strong">CSS Houdini</h1>
+					<p class="sub-screamer">Collection of <span class="emphasis">browser APIs</span> that allows you to gain access to the <span class="emphasis">browsers CSS engine</span>.</p>
+					<div class="grid-elements">
+						<div class="active">Paint</div>
+						<div class="active">Typed OM</div>
+						<div class="active">Properties & values</div>
+						<div>Animation</div>
+						<div>Layout</div>
+						<div>Parser</div>
+						<div>Font Metrics</div>
+						<div>✨ ✨ ✨</div>
+					</div>
+				</section>
+				<section>
+					<h1 class="screamer strong">But why...?</h1>
+				</section>
+				<section data-state="the-rant">
+					<h1 class="screamer strong">Caution! Rant time 😤</h1>
+				</section>
+				<section data-state="the-annoy">
+					<img src="blog-post.png" class="responsive-img" />
+				</section>
+				<section data-state="the-annoy">
+					<img src="comment.png" class="responsive-img" />
+				</section>
+				<section data-state="the-annoy">
+					<div class="sherlock-wrapper">
+						<img src="arrow.png" class="sherlock-arrow" width="200px;" />
+						<span class="sherlock-text">Sherlock</span>
+						<div class="side">
+							<div class="screamer-extra v-center strong">No 💩</div>
+							<div><img src="sherlock.png" width="170px;" /></div>
+						</div>
+					</div>
+				</section>
+				<section data-state="the-rant">
+					<h1 class="screamer">Why pure CSS when I have SVG/Image/etc?</h1>
+				</section>
+				<section data-state="the-rant">
+					<h1 class="screamer">Why even CSS Grid? I don't want to write 2 layouts!</h1>
+				</section>
+				<section data-state="the-rant">
+					<h1 class="screamer">Why CSS variables when I have SASS variables?</h1>
+				</section>
+				<section>
+					<h1 class="screamer">Because it is all about...</h1>
+					<ul class="sub-screamer">
+						<li class="fragment" data-fragment-index="0">Pushing boundaries</li>
+						<li class="fragment" data-fragment-index="1">Exploration</li>
+						<li class="fragment" data-fragment-index="2">Discovering new workflows</li>
+						<li class="fragment" data-fragment-index="3">So much more... but that's for you to discover...</li>
+					</ul>
+				</section>
+				<section>
+					<h1 class="screamer">Not just about the APIs...</h1>
+				</section>
+				<section>
+					<h1 class="screamer strong">How things are done pre and post Houdini</h1>
+					<p class="sub-screamer light">Not just about the APIs…</p>
+				</section>
+				<section>
+					<h1 class="screamer strong">🐰🎩</h1>
+					<h2 class="screamer strong">#1 Properties & Values</h2>
+				</section>
+				<section>
+					<h1 class="screamer strong">CSS Variables are cool...</h1>
+				</section>
+				<section data-state="the-demo">
+					<h1 class="screamer">It's dynamic!</h1>
+					<pre><code class="liveCoding css" data-livecoding-id="no-id" contenteditable>body {}
+</code></pre>
+				<div id="no-id">
+					<p class="screamer" style="color: #9e4fdb;">Now you see me~</p>
+				</div>
+				</section>
+				<section>
+					<h1 class="screamer strong">But it has limitations</h1>
+				</section>
+				<section data-state="the-demo">
+					<pre><code class="liveCoding css" data-livecoding-id="gradient-test" contenteditable>.swatch-houdini {
+  --start: tomato;
+  --end: deeppink;
+  width: 860px;
+  height: 200px;
+  background-image: linear-gradient(
+    to bottom, var(--start), var(--end)
+  );
+
+  transition-property: --start, --end;
+  transition-duration: 1s;
+}
+
+.swatch-houdini:hover {
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</code></pre>
+				<div id="gradient-test">
+					<div class="wrapper">
+            <div class="swatch-houdini"></div>
+          </div>
+				</div>
+				</section>
+				<section>
+					<h1 class="screamer strong">No semantic/meaning</h1>
+				</section>
+				<section>
+					<h1 class="screamer strong">Animating gradients right now</h1>
+					<p class="sub-screamer light">Pre-houdini Era</p>
+				</section>
+				<section data-state="the-demo">
+					<pre><code class="liveCoding css" data-livecoding-id="gradient-bg" contenteditable>.swatch-pos {
+  background: linear-gradient(
+    180deg,
+    tomato,
+    deeppink 51%,
+    blue
+  ) 0 var(--pos-y, 0) / 100% 200%;
+  height: 200px;
+  width: 860px;
+  transition: background-position 1s;
+}
+
+.swatch-pos:hover {
+  --pos-y: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+</code></pre>
+				<div id="gradient-bg">
+					<div class="wrapper">
+            <div class="swatch-pos"></div>
+          </div>
+				</div>
+				</section>
+				<section data-state="the-demo">
+					<pre><code class="liveCoding css" data-livecoding-id="gradient-opacity" contenteditable>.swatch-opacity {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  background-image: linear-gradient(
+    to bottom,
+    tomato,
+    deeppink
+  );
+  z-index: 1;
+}
+
+.swatch-opacity::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    deeppink,
+    blue
+  );
+  z-index: -1;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+.swatch-opacity:hover::before {
+  opacity: 1;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swatch-opacity-twin {
+	width: 300px;
+  height: 200px;
+  position: absolute;
+  background-image: linear-gradient(
+    to bottom,
+    deeppink,
+    blue
+  );
+
+	margin-right: 10px;
+	left: 0;
+  z-index: 1;
+	transition: left 1s ease-in-out;
+}
+
+.side.clicked .swatch-opacity-twin {
+	left: 330px;
+}
+
+</code></pre>
+				<div id="gradient-opacity">
+					<div class="wrapper">
+						<div class="side" id="demo-item">
+							<div class="swatch-opacity-twin"></div>
+						 	<div class="swatch-opacity"></div>
+						</div>
+				 	</div>
+					<i class="fas fa-play-circle play-btn" id="play-demo-1"></i>
+					<script>
+						let btn = document.getElementById('play-demo-1');
+						btn.addEventListener('click', () => {
+							document.getElementById('demo-item').classList.add('clicked');
+						})
+					</script>
+				</div>
+				</section>
+				<section>
+					<h1 class="screamer strong">Animating gradients with Houdini</h1>
+					<p class="sub-screamer">🐰🎩 Properties & Values</p>
+				</section>
+				<section>
+					<pre><code class="hljs">CSS.registerProperty({
+ name: '--start',
+ syntax: '&lt;color&gt;',
+ inherits: true,
+ initialValue: 'purple'
+})
+</code></pre>
+				<h1 class="screamer strong fragment" data-fragment-index="1">Strongly typed CSS 💪</h1>
+				</section>
+				<section>
+					<div class="livecode stretch no-console">
+	<pre><code class="javascript"></code></pre>
+	<pre><code class="html"></code></pre>
+	<pre><code class="css">body {
+	--start: tomato;
+	--end: deeppink;
+	width: 860px;
+	height: 200px;
+	background-image: linear-gradient(
+	to bottom, var(--start), var(--end)
+	);
+
+	transition-property: --start, --end;
+	transition-duration: 1s;
+}
+
+body:hover {
+	--start: deeppink;
+	--end: blue;
+}
+</code></pre>
+</div>
+				</section>
+				<section>
+					<h1 class="screamer strong">Simpler & Maintainable CSS with 🐰🎩</h1>
+				</section>
+				<section>
+					<h1 class="screamer strong">🐰🎩</h1>
+					<h2 class="screamer strong">#2 Typed OM</h2>
+				</section>
+				<section>
+					<h1 class="screamer strong">CSS values as typed JS objects instead of strings</h1>
+				</section>
+				<section>
+					<h1 class="sub-screamer">getComputedStyle</h1>
+					<pre><code class="hljs">getComputedStyle(element).width // 200px (string)
+getComputedStyle(element).opacity // 0.5 (string)
+</code></pre>
+				</section>
+				<section>
+					<h1 class="sub-screamer">computedStyleMap</h1>
+					<pre><code class="hljs">element.computedStyleMap().get('width')
+// getter will return:
+// CSSUnitValue {
+//   value: 50,
+//   unit: 'percent',
+// }
+</code></pre>
+<h1 class="sub-screamer">attributeStyleMap</h1>
+					<pre><code class="hljs">element.attributeStyleMap().set('width', '200px')
+element.attributeStyleMap().get('width')
+// getter will return:
+// CSSUnitValue {
+//   value: 200,
+//   unit: 'px',
+// }
+</code></pre>
+				</section>
+				<section data-state="the-wide-demo">
+					<div class="livecode stretch">
+					<pre><code class="javascript">let square = document.getElementById('square')
+let style = getComputedStyle(square)
+// console.log(typeof square.computedStyleMap().get('width'))
+// console.log(typeof square.computedStyleMap().get('width').value)
+// console.log(typeof square.attributeStyleMap().get('width').value)
+					</code></pre>
+					<pre><code class="html">&lt;div id=&quot;square&quot;&gt;&lt;/div&gt;</code></pre>
+	<pre><code class="css">#square {
+	width: 200px;
+	height: 200px;
+	background: deeppink;
+}
+</code></pre>
+				</section>
+				<section>
+					<h1 class="screamer strong">Performance benchmarking time!</h1>
+					<h2 class="screamer">⚡️⚡️⚡️</h2>
+				</section>
+				<section data-state="the-wide-demo">
+					<div class="livecode stretch">
+					<pre><code class="javascript">let then = performance.now()
+let s = document.getElementsByClassName('square')
+for (var foo = 0; foo < s.length; foo++) {
+  // change width of elements here
+}
+
+function withoutHoudini(elem) {
+ let typeConversion = parseInt(getComputedStyle(elem).width)
+ elem.style.width = typeConversion + 200
+}
+
+function withHoudini(elem) {
+ let value = elem.computedStyleMap().get('width').value
+ elem.style.width = value + 200
+}
+
+let now = performance.now()
+
+//console.log(`${now - then}ms`)
+					</code></pre>
+					<pre><code class="html">&lt;div id=&quot;element&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+  let element = document.getElementById('element')
+  for (var i = 0; i &lt; 1000; i++) {
+	let squares = document.createElement('div')
+	squares.classList.add('square')
+	element.appendChild(squares)
+  }
+&lt;/script&gt;
+</code></pre>
+	<pre><code class="css">#element {
+ display: flex;
+ flex-flow: row wrap;
+}
+.square {
+ width: 100px;
+ height: 100px;
+ background: deeppink;
+ margin-bottom: 20px;
+ margin-right: 10px;
+}
+</code></pre>
+				</section>
+				<section>
+					<h1 class="screamer strong">🐰🎩❤️⚡️</h1>
+					<p class="screamer strong">Better performance with Houdini</p>
+				</section>
+				<section>
+					<h1 class="screamer strong">🐰🎩</h1>
+					<h2 class="screamer strong">#3 Paint API 🎨</h2>
+				</section>
+				<section>
+						<h1 class="screamer strong" data-fragment-index="1">Lets talk about worklets!</h1>
+				</section>
+				<section>
+					<ul>
+						<li class="fragment" data-fragment-index="0">Similar to Web Workers</li>
+						<li class="fragment" data-fragment-index="1">No access to global scope items (no setTimouts)</li>
+						<li class="fragment" data-fragment-index="2">Only works over HTTPS or localhost</li>
+					</ul>
+				</section>
+				<section>
+					<h1 class="screamer">Draw on a canvas that can be used on background images</h1>
+				</section>
+					<section data-state="the-demo">
+						<h1 class="sub-screamer light">Create Worklet</h1>
+						<pre><code class="js" contenteditable>registerPaint('feature', class {
+  paint(ctx, geom, properties) {}
+})
+</code></pre>
+					</section>
+					<section data-state="the-demo">
+						<h1 class="sub-screamer light">Add Worklet to HTML</h1>
+						<pre><code class="js" contenteditable>CSS.paintWorklet.addModule('paint.js')
+</code></pre>
+					</section>
+					<section data-state="the-demo">
+						<h1 class="sub-screamer light">Use Worklet in CSS</h1>
+						<pre><code class="css" contenteditable>.bg {
+  background: paint('feature')
+}
+</code></pre>
+					</section>
+					<section>
+						<h1 class="screamer strong">Conic Gradients</h1>
+						<p class="sub-screamer light">Classic example of <strong>polyfilling</strong> CSS</p>
+					</section>
+					<section data-state="conic-gradient">
+						<pre><code class="css" contenteditable>.bg {
+  background: conic-gradient(yellowgreen 40%, gold 0 70%, #f06 0);
+}
+</code></pre>
+</section>
+					<section data-state="the-demo">
+						<img src="caniuse.png" class="responsive-img" />
+					</section>
+					<section data-state="the-annoy">
+						<h1 class="sub-screamer light">https://leaverou.github.io/conic-gradient/</h1>
+						<img src="conic.png" class="responsive-img" />
+					</section>
+					<section>
+						<h1 class="screamer">Let's create an interesting checkbox!</h1>
+					</section>
+					<section data-state="codepen">
+						<!-- Copy and Paste Me -->
+						<p class="codepen" data-height="600" data-theme-id="2508" data-default-tab="result" data-user="rrenula" data-slug-hash="gVXVxW" data-editable="true" style="height: 418px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Houdini Checkbox (Full Version)">
+  <span>See the Pen <a href="https://codepen.io/rrenula/pen/gVXVxW/">
+  CSS Houdini Checkbox (Full Version)</a> by Aysha Anggraini (<a href="https://codepen.io/rrenula">@rrenula</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</section>
+					<section data-state="tympanus">
+						<h1 class="sub-screamer light">Done in SVG and animated through Javascript</h1>
+						<div style="height: 400px; width: 100%;">
+							<iframe
+								src="https://tympanus.net/Development/AnimatedCheckboxes/"
+								style="height: 100%; width: 100%; border: 0;">
+							</iframe>
+						</div>
+					</section>
+					<section data-state="codepen">
+						<p class="codepen" data-height="600" data-theme-id="2508" data-default-tab="result" data-user="rrenula" data-slug-hash="728418c39662c5f9569cc2942c69562e" data-editable="true" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Houdini (Worklet &amp;amp; CSS Custom Properties)">
+  <span>See the Pen <a href="https://codepen.io/rrenula/pen/728418c39662c5f9569cc2942c69562e/">
+  CSS Houdini (Worklet &amp; CSS Custom Properties)</a> by Aysha Anggraini (<a href="https://codepen.io/rrenula">@rrenula</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+					</section>
+					<section data-state="codepen">
+						<p class="codepen" data-height="600" data-theme-id="2508" data-default-tab="result" data-user="rrenula" data-slug-hash="8401e63d716560a2195e662fff32d19e" data-editable="true" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Houdini (Animation with CSS Custom Properties)">
+  <span>See the Pen <a href="https://codepen.io/rrenula/pen/8401e63d716560a2195e662fff32d19e/">
+  CSS Houdini (Animation with CSS Custom Properties)</a> by Aysha Anggraini (<a href="https://codepen.io/rrenula">@rrenula</a>)
+  on <a href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+</section>
+				<section>
+					<h1 class="screamer strong">Variables ❤️ Paint API</h1>
+						<p>Better Code Configurability</p>
+				</section>
+				<section>
+					<h1 class="screamer strong">👏 👏 👏</h1>
+					<ul>
+						<li class="fragment" data-fragment-index="0">Polyfilling CSS...duh..</li>
+						<li class="fragment" data-fragment-index="1">Maintainable CSS</li>
+						<li class="fragment" data-fragment-index="2">Better Performance</li>
+						<li class="fragment" data-fragment-index="3">Better configurability</li>
+						<li class="fragment" data-fragment-index="4">Creative coding opportunities</li>
+					</ul>
+				</section>
+				<section>
+					<h1 class="screamer strong">😞 😞 😞</h1>
+					<ul>
+						<li class="fragment" data-fragment-index="0">Not ready yet</li>
+						<li class="fragment" data-fragment-index="1">Browser support</li>
+						<li class="fragment" data-fragment-index="2">Learning curve for Paint API (Canvas)</li>
+					</ul>
+				</section>
+				<section>
+					<h1 class="screamer strong">Checking out Layout & Animation Worklet</h1>
+				</section>
+				<section>
+					<h1 class="screamer strong">Exploring Paint API</h1>
+					<ol>
+						<li class="fragment" data-fragment-index="0">Register Custom Properties</li>
+						<li class="fragment" data-fragment-index="1">Create your own worklet</li>
+						<li class="fragment" data-fragment-index="2">Combine both to produce animation</li>
+					</ol>
+				</section>
+				<section>
+					<h1 class="screamer strong">Is Houdini Ready Yet?</h1>
+					<p>https://ishoudinireadyyet.com/</p>
+				</section>
+				<section>
+					<h1 class="screamer strong">Will Boyd on Coder's Block</h1>
+					<p>https://codersblock.com/blog/say-hello-to-houdini-and-the-css-paint-api/</p>
+				</section>
+				<section>
+					<h1 class="screamer strong">Experiments by @iamvdo</h1>
+					<p>https://css-houdini.rocks/</p>
+				</section>
+				<section>
+					<h1 class="screamer strong">Thank you!</h1>
+					<p class="screamer">❤️ ❤️ ❤️</p>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/livecoding/livecode.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/live-coding/live-coding.js', async: true, condition: function() { return !!document.body.classList; }}
+				]
+			});
+		</script>
+		<script src="https://kit.fontawesome.com/79f8ff02e3.js"></script>
+	</body>
+</html>
